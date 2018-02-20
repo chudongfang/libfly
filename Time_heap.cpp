@@ -71,12 +71,15 @@ void Time_heap::add_timer(heap_timer* timer)
         }
         array[hole] = array[parent];
     }
+    array[hole] = timer;
 
 }
 
 //添加定时器
 void Time_heap::add_timer( TimerCallback timerCallback,  void* arg,  int delay)
 {
+
+
     heap_timer * timer = new heap_timer(timerCallback , arg , delay);
     if(!timer)
     {
@@ -90,6 +93,7 @@ void Time_heap::add_timer( TimerCallback timerCallback,  void* arg,  int delay)
     }
 
     int hole = cur_size++;
+    // std::cout<<"hole :"<<parent<<std::endl;
     int parent = 0;
     for(; hole>0 ;hole = parent)
     {
@@ -174,7 +178,7 @@ void Time_heap::runOutTimeEvent()
 
         if(array[0]->timerCallback_)
         {
-            std::cout<<"Run timerCallback_!"<<std::endl;
+           // std::cout<<"Time_heap:: Run timerCallback_!"<<std::endl;
             array[0]->timerCallback_((Routine*) (array[0]->arg_));
         }
         pop_timer();
@@ -205,6 +209,7 @@ void Time_heap::push_down(int hole)
             break;
         }
     }
+    array[hole] = temp;
 }
 
 

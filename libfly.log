@@ -1,0 +1,4 @@
+2018-2-21 1:10:2  test.cpp main 67 :trace Yes!
+2018-2-21 1:11:4  trace test.cpp main 67 : Yes!
+2018-2-21 1:15:3  trace test.cpp main 67 : Yes!
+2018-2-21 1:16:49  trace test.cpp main 67 : Yes!

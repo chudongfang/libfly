@@ -18,7 +18,6 @@ Poller::Poller( TimerCallback  timerCallback , void * arg , int delay)
 {
     
   //  assert(timerCallbac);
-   // std::cout<<delay_<<std::endl;
     if(delay_ < 0)
     {
         delay_ = 1e9;

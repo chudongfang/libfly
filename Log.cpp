@@ -5,38 +5,44 @@
 	> Created Time: 2018年02月13日 星期二 17时02分24秒
  ************************************************************************/
 
-#include<iostream>
 #include "Log.h"
 
-#include <cstdio>  
+namespace libfly
+{
 
-#include <boost/thread/thread.hpp>
-
-using namespace libfly;
-
-namespace simpleLog
+namespace LogInfo
 {
 	namespace LevelType{//less is more important.
-		const int _TRACE = 90;
+		const int TRACE = 90;
 		const int INFO = 50;
-		const int _ERROR = 30;
-		const int NAUGHT = 0; //no output
+		const int ERROR = 30;
+		const int DEBUG = 0; 
 	}
 }
 
-simpleLogClass::simpleLogClass()
+
+//构造函数
+Log::Log(std::string projectName)
+  : projectName_(projectName)
 {
-	fileName = "simpleLog.log";
-	fileOldName = "simpleLog.old.log";
-	fileMaxSize = 64 * 1024;//default is 64KB size.
-	outputLevel = simpleLog::LevelType::_TRACE;
+	fileName_ =  projectName_ +  ".log";
+	fileOldName_ =  projectName_ + ".old.log";
+	fileMaxSize_ = 64 * 1024;     //default is 64KB size.
+    outputLevel_ = LogInfo::LevelType::TRACE;
 }
 
-long simpleLogClass::getFileSize() {
+
+Log::~Log()
+{
+
+}
+
+//得到文件大小
+long Log::getFileSize() {
 	FILE * pFile;
 	long size;
 
-	pFile = fopen(fileName.c_str(), "rb");
+    pFile = fopen(fileName_.c_str(), "rb");
 	if (pFile == NULL)
 		return 0l;
 
@@ -46,19 +52,19 @@ long simpleLogClass::getFileSize() {
 	return size;
 }
 
-void simpleLogClass::limitFileSize()
+void Log::limitFileSize()
 {
-	if (getFileSize() > fileMaxSize)
+	if (getFileSize() > fileMaxSize_)
 	{
 		//if old name file exist, remove it.
-		remove(fileOldName.c_str());
+		remove(fileOldName_.c_str());
 
 		//rename the current file to old name file.
-		rename(fileName.c_str(), fileOldName.c_str());
+		rename(fileName_.c_str(), fileOldName_.c_str());
 	}
 }
 
-void simpleLogClass::writeTime(ofstream &file)
+void Log::writeTime(std::ofstream &file)
 {
 	time_t t;
 	tm *lt;
@@ -69,53 +75,64 @@ void simpleLogClass::writeTime(ofstream &file)
 	file << lt->tm_hour << ":" << lt->tm_min << ":" << lt->tm_sec << "  ";
 }
 
-void simpleLogClass::outputDebugInfo(int _outputLevel, std::string strInfo)
+void Log::outputInfo(int _outputLevel, std::string filePos ,std::string function, int line , std::string strInfo)
 {
-	static boost::mutex mInfo;
-	boost::lock_guard<boost::mutex> lock(mInfo);
+    static std::mutex mInfo;
+    std::lock_guard<std::mutex> lock(mInfo);
 
 	limitFileSize();
 
 	std::string strLevel;
 	switch (_outputLevel)
 	{
-	case simpleLog::LevelType::_TRACE:
+	case LogInfo::LevelType::TRACE:
 		strLevel = "trace";
 		break;
-	case simpleLog::LevelType::INFO:
+	case LogInfo::LevelType::INFO:
 		strLevel = "info";
 		break;
-	case simpleLog::LevelType::_ERROR:
+	case LogInfo::LevelType::ERROR:
 		strLevel = "error";
 		break;
 	}
 
-	std::ofstream file(fileName.c_str(), ios::app | ios::out);
+    std::ofstream file(fileName_.c_str(), std::ios::app | std::ios::out);
 	writeTime(file);
-	file << strLevel.c_str() << " " << strInfo.c_str() << endl;
+    file << strLevel.c_str()<<" ";
+    file << filePos <<" "<<function<<" "<<line <<" :";
+    file  << " " << strInfo.c_str() << std::endl;
 	file.close();
 }
 
-void simpleLogClass::trace(std::string strTrace)
+void Log::trace(std::string file , std::string function, int line,std::string strTrace)
 {
-	if (outputLevel >= simpleLog::LevelType::_TRACE)
+	if (outputLevel_ >= LogInfo::LevelType::TRACE)
 	{
-		outputDebugInfo(simpleLog::LevelType::_TRACE, strTrace);
+        outputInfo(LogInfo::LevelType::TRACE, file, function, line, strTrace);
 	}
 }
 
-void simpleLogClass::info(std::string strInfo)
+void Log::info(std::string file , std::string function, int line, std::string strInfo)
 {
-	if (outputLevel >= simpleLog::LevelType::INFO)
+	if (outputLevel_ >= LogInfo::LevelType::INFO)
 	{
-		outputDebugInfo(simpleLog::LevelType::INFO, strInfo);
+		outputInfo(LogInfo::LevelType::INFO, file, function, line, strInfo);
 	}
 }
 
-void simpleLogClass::error(std::string strInfo)
+void Log::error(std::string file , std::string function, int line , std::string strError)
 {
-	if (outputLevel >= simpleLog::LevelType::_ERROR)
+	if (outputLevel_ >= LogInfo::LevelType::ERROR)
 	{
-		outputDebugInfo(simpleLog::LevelType::_ERROR, strInfo);
+        outputInfo(LogInfo::LevelType::ERROR, file, function, line, strError);
 	}
+}
+void Log::debug(std::string file , std::string function, int line , std::string strDebug)
+{
+    std::cout <<"DEBUG-->"<< file <<" " << function <<" "<<line <<" :" <<strDebug<<std::endl;
+}
+
+
+
+
 }

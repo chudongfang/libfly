@@ -10,37 +10,82 @@
 
 #include <string>
 #include <fstream>
+#include <thread>
+#include <mutex>
+#include <iostream>
+namespace libfly
+{
 
-using namespace libfly;
+#define LOG_TRACE(Logname,strTrace) (Logname).trace(__FILE__,__FUNCTION__,__LINE__,(strTrace))
+#define LOG_INFO(Logname,strTrace)  (Logname).info(__FILE__,__FUNCTION__,__LINE__,(strTrace)
+#define LOG_ERROR(Logname,strTrace) (Logname).error(__FILE__,__FUNCTION__,__LINE__,(strTrace)
+#define LOG_DEBUG(Logname,strTrace) (Logname).debug(__FILE__,__FUNCTION__,__LINE__,(strTrace))
 
-namespace Log
+namespace LogInfo
 {
     namespace LevelType{//less is more important.
-         extern const int _TRACE;
+         extern const int TRACE;
          extern const int INFO;
-         extern const int _ERROR;
-        extern const int NAUGHT; //no output
+         extern const int ERROR;
+         extern const int DEBUG; //no output
     }
 }
 
-class LogClass
+class Log
 {
-    public:
-        simpleLogClass();
-        void trace(std::string strTrace);
-        void info(std::string strInfo);
-        void error(std::string strInfo);
+public:
+    Log(std::string projectName);
+    ~Log();
+    void trace(std::string file ,std::string function, int line, std::string strTrace);
+    void info (std::string file ,std::string function, int line, std::string strInfo);
+    void error(std::string file ,std::string function, int line, std::string strError);
+    void debug(std::string file ,std::string function, int line, std::string strTrace);
 
-        std::string fileName;
-        std::string fileOldName;
-        long   fileMaxSize;
-        int    outputLevel;
-    private:
-        void outputDebugInfo(int _outputLevel, std::string strInfo);
-        void limitFileSize();
-        long getFileSize();
-        void writeTime(ofstream &file);
+
+    std::string getfileName() const
+    { return fileName_; }
+
+    std::string getfileOldName() const
+    { return fileOldName_; }
+    
+    std::string getprojectName() const
+    { return projectName_; }
+    
+    int getoutputLevel()
+    {  return outputLevel_;  }
+
+    void setfileName(const std::string fileName)
+    {
+        fileName_ = fileName;
+    }
+    
+    void setprojectName(const std::string projectName)
+    {
+        projectName_ =  projectName;
+    }
+
+
+private:
+    void outputInfo(int _outputLevel, std::string filePos ,std::string function, int line , std::string strInfo);
+    void limitFileSize();
+    long getFileSize();
+    void writeTime(std::ofstream &file);
+    
+    std::string fileName_;
+    std::string fileOldName_;
+    std::string projectName_;
+    
+    long   fileMaxSize_;
+    int    outputLevel_;
+     
 };
+
+
+
+
+}
+
+
 
 
 #endif

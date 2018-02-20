@@ -35,7 +35,7 @@ else
 LINKS += -std=c++11 -g -L./lib -lcolib -lpthread -ldl
 endif
 
-COLIB_OBJS=routine.o  coctx_swap.o coctx.o
+COLIB_OBJS=routine.o  coctx_swap.o coctx.o   
 #co_swapcontext.o
 
 PROGS = colib  test 
