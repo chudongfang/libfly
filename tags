@@ -1,0 +1,374 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AR	co.mk	/^AR = ar -rc$/;"	m
+ARSTATICLIB	co.mk	/^ARSTATICLIB = $(AR) $@.tmp $^ $(AR_FLAGS); \\$/;"	m
+BFLAGS	co.mk	/^BFLAGS= -g$/;"	m
+BUILDEXE	co.mk	/^BUILDEXE = $(CPP) $(BFLAGS) -o $@ $^ $(LINKS) $/;"	m
+BUILDSHARELIB	co.mk	/^BUILDSHARELIB = $(CPPSHARE) $@.tmp $^ $(BS_FLAGS); \\$/;"	m
+CCCOMPI	co.mk	/^CCCOMPI=$(CC) $(CFLAGS)$/;"	m
+CCCOMPILE	co.mk	/^CCCOMPILE = $(CCCOMPI) $< $(FLAGS) $(INCLS) $(MTOOL_INCL) -o $@$/;"	m
+CFLAGS	co.mk	/^CFLAGS= -O2 $(INCLS) -fPIC  -DLINUX -pipe -Wno-deprecated -c$/;"	m
+CFLAGS	co.mk	/^CFLAGS= -g $(INCLS) -fPIC -DLINUX -pipe -c -fno-inline$/;"	m
+CLEAN	co.mk	/^CLEAN = rm -f *.o $/;"	m
+COBJS	co.mk	/^COBJS  = $(patsubst %.c,%.o,$(CSRCS))$/;"	m
+COLIB_OBJS	Makefile	/^COLIB_OBJS=routine.o  coctx_swap.o coctx.o$/;"	m
+COMM_ECHO	Makefile	/^COMM_ECHO = 1$/;"	m
+COMM_MAKE	Makefile	/^COMM_MAKE = 1$/;"	m
+CO_ROUTINE_SPECIFIC	routine_specific.h	47;"	d
+CPP	co.mk	/^CPP = $(CXX)$/;"	m
+CPPCOMPI	co.mk	/^CPPCOMPI=$(CPP) $(CFLAGS) -Wno-deprecated$/;"	m
+CPPCOMPILE	co.mk	/^CPPCOMPILE = $(CPPCOMPI) $< $(FLAGS) $(INCLS) $(MTOOL_INCL) -o $@$/;"	m
+CPPOBJS	co.mk	/^CPPOBJS  = $(patsubst %.cpp,%.o,$(CPPSRCS))$/;"	m
+CPPSHARE	co.mk	/^CPPSHARE = $(CPP) -fPIC -shared -O2 -pipe -L$(SRCROOT)\/solib\/ -o $/;"	m
+CPPSRCS	co.mk	/^CPPSRCS  = $(wildcard *.cpp)$/;"	m
+CSHARE	co.mk	/^CSHARE = $(CC) -fPIC -shared -O2 -pipe -L$(SRCROOT)\/solib\/ -o $/;"	m
+CSRCS	co.mk	/^CSRCS  = $(wildcard *.c)$/;"	m
+CallStackSize_	routine.h	/^	int CallStackSize_;               \/\/栈指针$/;"	m	class:libfly::RoutineEnv
+CallStack_	routine.h	/^	Routine* CallStack_[ 128 ];       \/\/保存调用链$/;"	m	class:libfly::RoutineEnv
+DYNAMICLIBPATH	co.mk	/^DYNAMICLIBPATH=$(SRCROOT)\/solib$/;"	m
+EAX	coctx.cpp	25;"	d	file:
+ECX	coctx.cpp	26;"	d	file:
+EIP	coctx.cpp	24;"	d	file:
+EPOLLERR	epoll.h	/^	EPOLLERR = 0X008,$/;"	e	enum:EPOLL_EVENTS
+EPOLLHUP	epoll.h	/^	EPOLLHUP = 0X010,$/;"	e	enum:EPOLL_EVENTS
+EPOLLIN	epoll.h	/^	EPOLLIN = 0X001,$/;"	e	enum:EPOLL_EVENTS
+EPOLLOUT	epoll.h	/^	EPOLLOUT = 0X004,$/;"	e	enum:EPOLL_EVENTS
+EPOLLPRI	epoll.h	/^	EPOLLPRI = 0X002,$/;"	e	enum:EPOLL_EVENTS
+EPOLLRDNORM	epoll.h	/^    EPOLLRDNORM = 0x40,$/;"	e	enum:EPOLL_EVENTS
+EPOLLWRNORM	epoll.h	/^    EPOLLWRNORM = 0x004,$/;"	e	enum:EPOLL_EVENTS
+EPOLL_CTL_ADD	epoll.h	60;"	d
+EPOLL_CTL_DEL	epoll.h	61;"	d
+EPOLL_CTL_MOD	epoll.h	62;"	d
+EPOLL_EVENTS	epoll.h	/^enum EPOLL_EVENTS$/;"	g
+ESP	coctx.cpp	23;"	d	file:
+End_	routine.h	/^    char End_;$/;"	m	class:libfly::Routine
+EventLoop	routine.cpp	/^EventLoop::EventLoop( Time_heap* time_heap, EventLoop_Function runInLoopFunction , void *arg )$/;"	f	class:libfly::EventLoop
+EventLoop	routine.h	/^class EventLoop$/;"	c	namespace:libfly
+EventLoop_Function	Callback.h	/^typedef int (*EventLoop_Function)(void *);$/;"	t	namespace:libfly
+GetPid	hook_sys_call.cpp	/^static inline pid_t GetPid()$/;"	f	file:
+GetPid	routine.cpp	/^static pid_t GetPid()$/;"	f	namespace:libfly
+GetTickMS	routine.cpp	/^static unsigned long long GetTickMS()$/;"	f	namespace:libfly
+HOOK_SYS_FUNC	hook_sys_call.cpp	170;"	d	file:
+INFO	Log.cpp	/^		const int INFO = 50;$/;"	m	namespace:simpleLog::LevelType	file:
+Id_	routine.h	/^    unsigned long long Id_;           \/\/协程ID$/;"	m	class:libfly::Routine
+IsMainRoutine_	routine.h	/^    char IsMainRoutine_;              \/\/是否是主协程$/;"	m	class:libfly::Routine
+LevelType	Log.cpp	/^	namespace LevelType{\/\/less is more important.$/;"	n	namespace:simpleLog	file:
+LevelType	Log.h	/^    namespace LevelType{\/\/less is more important.$/;"	n	namespace:Log
+Log	Log.h	/^namespace Log$/;"	n
+LogClass	Log.h	/^class LogClass$/;"	c
+MAIL_ROOT	co.mk	/^MAIL_ROOT=.$/;"	m
+NAUGHT	Log.cpp	/^		const int NAUGHT = 0; \/\/no output$/;"	m	namespace:simpleLog::LevelType	file:
+OBJS	co.mk	/^OBJS = $(CPPOBJS) $(COBJS)$/;"	m
+PROGS	Makefile	/^PROGS = colib  test $/;"	m
+Poller	Poller.cpp	/^Poller::Poller( TimerCallback  timerCallback , void * arg , int delay)$/;"	f	class:libfly::Poller
+Poller	Poller.h	/^class Poller$/;"	c	namespace:libfly
+R12	coctx.cpp	35;"	d	file:
+R13	coctx.cpp	36;"	d	file:
+R14	coctx.cpp	37;"	d	file:
+R15	coctx.cpp	38;"	d	file:
+R8	coctx.cpp	41;"	d	file:
+R9	coctx.cpp	42;"	d	file:
+RANLIB	co.mk	/^RANLIB = ranlib$/;"	m
+RBP	coctx.cpp	34;"	d	file:
+RBX	coctx.cpp	30;"	d	file:
+RCX	coctx.cpp	40;"	d	file:
+RDI	coctx.cpp	31;"	d	file:
+RDX	coctx.cpp	39;"	d	file:
+RIP	coctx.cpp	29;"	d	file:
+RSI	coctx.cpp	32;"	d	file:
+RSP	coctx.cpp	28;"	d	file:
+Routine	routine.cpp	/^Routine::Routine( RoutineEnv * env, $/;"	f	class:libfly::Routine
+Routine	routine.h	/^class Routine $/;"	c	namespace:libfly
+RoutineAttr	routine.h	/^    RoutineAttr()$/;"	f	class:libfly::RoutineAttr
+RoutineAttr	routine.h	/^class RoutineAttr\/\/协程的参数$/;"	c	namespace:libfly
+RoutineEnv	routine.h	/^class RoutineEnv$/;"	c	namespace:libfly
+RoutineFunc	routine.cpp	/^static int RoutineFunc( Routine* routine,void * )$/;"	f	namespace:libfly
+Routine_Function	Callback.h	/^typedef void *(*Routine_Function)( void * );$/;"	t	namespace:libfly
+Routine_Id	routine.cpp	/^unsigned long long Routine_Id=0;$/;"	m	namespace:libfly	file:
+Run_In_Routine_1	test.cpp	/^void * Run_In_Routine_1(void *arg)$/;"	f
+SRCROOT	co.mk	/^SRCROOT=.$/;"	m
+SRCS	co.mk	/^SRCS = $(CPPSRCS) $(CSRCS)$/;"	m
+STATICLIBPATH	co.mk	/^STATICLIBPATH=$(SRCROOT)\/lib$/;"	m
+StackMemry	routine.cpp	/^StackMemry::StackMemry(int stack_size)$/;"	f	class:libfly::StackMemry
+StackMemry	routine.h	/^class StackMemry$/;"	c	namespace:libfly
+Start_	routine.h	/^    char Start_;                      \/\/协程是否运行$/;"	m	class:libfly::Routine
+Time_heap	Time_heap.cpp	/^Time_heap::Time_heap(int cap)$/;"	f	class:libfly::Time_heap
+Time_heap	Time_heap.h	/^class Time_heap$/;"	c	namespace:libfly
+TimerCallback	Callback.h	/^typedef void *(*TimerCallback)( Routine * );$/;"	t	namespace:libfly
+UNAME	Makefile	/^UNAME := $(shell uname -s)$/;"	m
+_ERROR	Log.cpp	/^		const int _ERROR = 30;$/;"	m	namespace:simpleLog::LevelType	file:
+_LOG_H	Log.h	9;"	d
+_POLLER_H	Poller.h	9;"	d
+_ROUTINE_H	routine.h	9;"	d
+_TIME_HEAP	Time_heap.h	2;"	d
+_TRACE	Log.cpp	/^		const int _TRACE = 90;$/;"	m	namespace:simpleLog::LevelType	file:
+__CO_CLOSURE_H__	closure.h	20;"	d
+__CO_CTX_H__	coctx.h	20;"	d
+__CO_EPOLL_H__	epoll.h	20;"	d
+__poll	hook_sys_call.cpp	/^	int __poll(struct pollfd fds[], nfds_t nfds, int timeout)$/;"	f
+__poll_pfn_t	hook_sys_call.cpp	/^typedef int (*__poll_pfn_t)(struct pollfd fds[], nfds_t nfds, int timeout);$/;"	t	file:
+__res_state	hook_sys_call.cpp	/^	res_state __res_state() $/;"	f
+__res_state_pfn_t	hook_sys_call.cpp	/^typedef res_state (*__res_state_pfn_t)();$/;"	t	file:
+add_timer	Time_heap.cpp	/^void Time_heap::add_timer( TimerCallback timerCallback,  void* arg,  int delay)$/;"	f	class:libfly::Time_heap
+add_timer	Time_heap.cpp	/^void Time_heap::add_timer(heap_timer* timer)$/;"	f	class:libfly::Time_heap
+alloc_by_fd	hook_sys_call.cpp	/^static inline rpchook_t * alloc_by_fd( int fd )$/;"	f	file:
+arg_	Poller.h	/^    void * arg_;$/;"	m	class:libfly::Poller
+arg_	Time_heap.h	/^    void* arg_;$/;"	m	class:libfly::heap_timer
+arg_	routine.h	/^    void *arg_;$/;"	m	class:libfly::EventLoop
+arg_	routine.h	/^    void* arg_;                       \/\/协程块函数对应的参数$/;"	m	class:libfly::Routine
+array	Time_heap.h	/^    heap_timer** array;$/;"	m	class:libfly::Time_heap
+bIsRespNotExist	hook_sys_call.cpp	/^    unsigned char    bIsRespNotExist;$/;"	m	struct:rpchook_connagent_head_t	file:
+bVersion	hook_sys_call.cpp	/^    unsigned char    bVersion;$/;"	m	struct:rpchook_connagent_head_t	file:
+buffer	hook_sys_call.cpp	/^	char* buffer;$/;"	m	struct:hostbuf_wrap	file:
+capacity	Time_heap.h	/^    int capacity;$/;"	m	class:libfly::Time_heap
+clear	epoll.cpp	/^	inline int clear( int fd )$/;"	f	class:clsFdMap
+close	hook_sys_call.cpp	/^int close(int fd)$/;"	f
+close_pfn_t	hook_sys_call.cpp	/^typedef int (*close_pfn_t)(int fd);$/;"	t	file:
+clsFdMap	epoll.cpp	/^	clsFdMap()$/;"	f	class:clsFdMap
+clsFdMap	epoll.cpp	/^class clsFdMap \/\/ million of fd , 1024 * 1024 $/;"	c	file:
+cnt	hook_sys_call.cpp	/^	size_t cnt;$/;"	m	struct:stCoSysEnvArr_t	file:
+co_accept	hook_sys_call.cpp	/^int co_accept( int fd, struct sockaddr *addr, socklen_t *len )$/;"	f
+co_enable_hook_sys	hook_sys_call.cpp	/^void co_enable_hook_sys() \/\/�⺯������������,�����ļ��ᱻ���ԣ�����$/;"	f
+co_epoll_create	epoll.cpp	/^int	co_epoll_create( int size )$/;"	f
+co_epoll_create	epoll.cpp	/^int co_epoll_create( int size )$/;"	f
+co_epoll_ctl	epoll.cpp	/^int	co_epoll_ctl( int epfd,int op,int fd,struct epoll_event * ev )$/;"	f
+co_epoll_ctl	epoll.cpp	/^int co_epoll_ctl( int epfd,int op,int fd,struct epoll_event * ev )$/;"	f
+co_epoll_del	epoll.cpp	/^int co_epoll_del( int epfd,int fd )$/;"	f
+co_epoll_res	epoll.h	/^struct co_epoll_res$/;"	s
+co_epoll_res_alloc	epoll.cpp	/^struct co_epoll_res *co_epoll_res_alloc( int n )$/;"	f
+co_epoll_res_free	epoll.cpp	/^void co_epoll_res_free( struct co_epoll_res * ptr )$/;"	f
+co_epoll_wait	epoll.cpp	/^int	co_epoll_wait( int epfd,struct co_epoll_res *events,int maxevents,int timeout )$/;"	f
+co_epoll_wait	epoll.cpp	/^int co_epoll_wait( int epfd,struct co_epoll_res *events,int maxevents,int timeout )$/;"	f
+co_func	closure.h	79;"	d
+co_func_end	closure.h	92;"	d
+co_gethostbyname	hook_sys_call.cpp	/^struct hostent *co_gethostbyname(const char *name)$/;"	f
+co_ref	closure.h	63;"	d
+co_set_env_list	hook_sys_call.cpp	/^void co_set_env_list( const char *name[],size_t cnt)$/;"	f
+co_swap	routine.cpp	/^void co_swap(Routine* Current_Routine, Routine* Pending_Routine)$/;"	f	namespace:libfly
+co_sysenv_comp	hook_sys_call.cpp	/^static int co_sysenv_comp(const void *a, const void *b)$/;"	f	file:
+coctx_init	coctx.cpp	/^int coctx_init( coctx_t *ctx )$/;"	f
+coctx_make	coctx.cpp	/^int coctx_make( coctx_t *ctx,coctx_pfn_t pfn,const void *s,const void *s1 )$/;"	f
+coctx_param_t	coctx.h	/^struct coctx_param_t$/;"	s
+coctx_pfn_t	coctx.h	/^typedef void* (*coctx_pfn_t)( void* s, void* s2 );$/;"	t
+coctx_swap	coctx_swap.S	/^coctx_swap:$/;"	l
+coctx_t	coctx.h	/^struct coctx_t$/;"	s
+col_size	epoll.cpp	/^	static const int col_size = 1024;$/;"	m	class:clsFdMap	file:
+comac_arg_n	closure.h	31;"	d
+comac_argc	closure.h	35;"	d
+comac_args_seqs	closure.h	32;"	d
+comac_get_args_cnt	closure.h	30;"	d
+comac_join	closure.h	36;"	d
+comac_join_1	closure.h	33;"	d
+con_param_typeof	closure.h	57;"	d
+connect	hook_sys_call.cpp	/^int connect(int fd, const struct sockaddr *address, socklen_t address_len)$/;"	f
+connect_pfn_t	hook_sys_call.cpp	/^typedef int (*connect_pfn_t)(int socket, const struct sockaddr *address, socklen_t address_len);$/;"	t	file:
+ctx_	routine.h	/^    coctx_t ctx_;                     \/\/用来保存CPU上下文$/;"	m	class:libfly::Routine
+cur_size	Time_heap.h	/^    int cur_size;$/;"	m	class:libfly::Time_heap
+data	epoll.h	/^	epoll_data_t data;$/;"	m	struct:epoll_event
+data	hook_sys_call.cpp	/^	stCoSysEnv_t *data;$/;"	m	struct:stCoSysEnvArr_t	file:
+dbg_flag	routine.cpp	/^void dbg_flag(int line)$/;"	f	namespace:libfly
+dbg_print	routine.cpp	/^void dbg_print(char * str)$/;"	f	namespace:libfly
+decl_typeof	closure.h	51;"	d
+decl_typeof	closure.h	53;"	d
+del_timer	Time_heap.cpp	/^void Time_heap::del_timer(heap_timer* timer)$/;"	f	class:libfly::Time_heap
+delay_	Poller.h	/^    int delay_;$/;"	m	class:libfly::Poller
+dest	hook_sys_call.cpp	/^	struct sockaddr_in dest; \/\/maybe sockaddr_un;$/;"	m	struct:rpchook_t	typeref:struct:rpchook_t::sockaddr_in	file:
+diff_ms	hook_sys_call.cpp	/^static inline ll64_t diff_ms(struct timeval &begin,struct timeval &end)$/;"	f	file:
+domain	hook_sys_call.cpp	/^	int domain; \/\/AF_LOCAL , AF_INET$/;"	m	struct:rpchook_t	file:
+dup_co_sysenv_arr	hook_sys_call.cpp	/^static stCoSysEnvArr_t *dup_co_sysenv_arr( stCoSysEnvArr_t * arr )$/;"	f	file:
+empty	Time_heap.h	/^    bool empty() const $/;"	f	class:libfly::Time_heap
+env_	routine.h	/^    RoutineEnv * env_;                \/\/当前协程环境$/;"	m	class:libfly::Routine
+epoll_data	epoll.h	/^typedef union epoll_data$/;"	u
+epoll_data_t	epoll.h	/^} epoll_data_t;$/;"	t	typeref:union:epoll_data
+epoll_event	epoll.h	/^struct epoll_event$/;"	s
+error	Log.cpp	/^void simpleLogClass::error(std::string strInfo)$/;"	f	class:simpleLogClass
+eventlist	epoll.h	/^	struct kevent *eventlist;$/;"	m	struct:co_epoll_res	typeref:struct:co_epoll_res::kevent
+events	epoll.cpp	/^	int events;$/;"	m	struct:kevent_pair_t	file:
+events	epoll.h	/^	struct epoll_event *events;$/;"	m	struct:co_epoll_res	typeref:struct:co_epoll_res::epoll_event
+events	epoll.h	/^	uint32_t events;$/;"	m	struct:epoll_event
+expire	Time_heap.h	/^    time_t expire;$/;"	m	class:libfly::heap_timer
+fcntl	hook_sys_call.cpp	/^int fcntl(int fildes, int cmd, ...)$/;"	f
+fcntl_pfn_t	hook_sys_call.cpp	/^typedef int (*fcntl_pfn_t)(int fildes, int cmd, ...);$/;"	t	file:
+fd	epoll.h	/^	int fd;$/;"	m	union:epoll_data
+fileMaxSize	Log.h	/^        long   fileMaxSize;$/;"	m	class:LogClass
+fileName	Log.h	/^        std::string fileName;$/;"	m	class:LogClass
+fileOldName	Log.h	/^        std::string fileOldName;$/;"	m	class:LogClass
+fire_idx	epoll.cpp	/^	int fire_idx;$/;"	m	struct:kevent_pair_t	file:
+free_by_fd	hook_sys_call.cpp	/^static inline void free_by_fd( int fd )$/;"	f	file:
+g_arryEnvPerThread	routine.cpp	/^static RoutineEnv* g_arryEnvPerThread[ 204800 ] = {0};$/;"	m	namespace:libfly	file:
+g_co_sysenv	hook_sys_call.cpp	/^static stCoSysEnvArr_t g_co_sysenv = { 0 };$/;"	v	file:
+g_rpchook_socket_fd	hook_sys_call.cpp	/^static rpchook_t *g_rpchook_socket_fd[ 102400 ] = { 0 };$/;"	v	file:
+g_sys___poll_func	hook_sys_call.cpp	/^static __poll_pfn_t g_sys___poll_func = (__poll_pfn_t)dlsym(RTLD_NEXT, "__poll");$/;"	v	file:
+g_sys___res_state_func	hook_sys_call.cpp	/^static __res_state_pfn_t g_sys___res_state_func  = (__res_state_pfn_t)dlsym(RTLD_NEXT,"__res_state");$/;"	v	file:
+g_sys_close_func	hook_sys_call.cpp	/^static close_pfn_t g_sys_close_func 	= (close_pfn_t)dlsym(RTLD_NEXT,"close");$/;"	v	file:
+g_sys_connect_func	hook_sys_call.cpp	/^static connect_pfn_t g_sys_connect_func = (connect_pfn_t)dlsym(RTLD_NEXT,"connect");$/;"	v	file:
+g_sys_fcntl_func	hook_sys_call.cpp	/^static fcntl_pfn_t g_sys_fcntl_func 	= (fcntl_pfn_t)dlsym(RTLD_NEXT,"fcntl");$/;"	v	file:
+g_sys_getenv_func	hook_sys_call.cpp	/^static getenv_pfn_t g_sys_getenv_func   =  (getenv_pfn_t)dlsym(RTLD_NEXT,"getenv");$/;"	v	file:
+g_sys_gethostbyname_func	hook_sys_call.cpp	/^static gethostbyname_pfn_t g_sys_gethostbyname_func = (gethostbyname_pfn_t)dlsym(RTLD_NEXT, "gethostbyname");$/;"	v	file:
+g_sys_poll_func	hook_sys_call.cpp	/^static poll_pfn_t g_sys_poll_func 		= (poll_pfn_t)dlsym(RTLD_NEXT,"poll");$/;"	v	file:
+g_sys_read_func	hook_sys_call.cpp	/^static read_pfn_t g_sys_read_func 		= (read_pfn_t)dlsym(RTLD_NEXT,"read");$/;"	v	file:
+g_sys_recv_func	hook_sys_call.cpp	/^static recv_pfn_t g_sys_recv_func 		= (recv_pfn_t)dlsym(RTLD_NEXT,"recv");$/;"	v	file:
+g_sys_recvfrom_func	hook_sys_call.cpp	/^static recvfrom_pfn_t g_sys_recvfrom_func = (recvfrom_pfn_t)dlsym(RTLD_NEXT,"recvfrom");$/;"	v	file:
+g_sys_send_func	hook_sys_call.cpp	/^static send_pfn_t g_sys_send_func 		= (send_pfn_t)dlsym(RTLD_NEXT,"send");$/;"	v	file:
+g_sys_sendto_func	hook_sys_call.cpp	/^static sendto_pfn_t g_sys_sendto_func 	= (sendto_pfn_t)dlsym(RTLD_NEXT,"sendto");$/;"	v	file:
+g_sys_setenv_func	hook_sys_call.cpp	/^static setenv_pfn_t g_sys_setenv_func   = (setenv_pfn_t)dlsym(RTLD_NEXT,"setenv");$/;"	v	file:
+g_sys_setsockopt_func	hook_sys_call.cpp	/^static setsockopt_pfn_t g_sys_setsockopt_func $/;"	v	file:
+g_sys_socket_func	hook_sys_call.cpp	/^static socket_pfn_t g_sys_socket_func 	= (socket_pfn_t)dlsym(RTLD_NEXT,"socket");$/;"	v	file:
+g_sys_unsetenv_func	hook_sys_call.cpp	/^static unsetenv_pfn_t g_sys_unsetenv_func = (unsetenv_pfn_t)dlsym(RTLD_NEXT,"unsetenv");$/;"	v	file:
+g_sys_write_func	hook_sys_call.cpp	/^static write_pfn_t g_sys_write_func 	= (write_pfn_t)dlsym(RTLD_NEXT,"write");$/;"	v	file:
+get	epoll.cpp	/^	inline void *get( int fd )$/;"	f	class:clsFdMap
+getFileSize	Log.cpp	/^long simpleLogClass::getFileSize() {$/;"	f	class:simpleLogClass
+getId	routine.h	/^    unsigned long long getId() const$/;"	f	class:libfly::Routine
+get_by_fd	hook_sys_call.cpp	/^static inline rpchook_t * get_by_fd( int fd )$/;"	f	file:
+get_curr_routine	routine.cpp	/^Routine * get_curr_routine()$/;"	f	namespace:libfly
+get_curr_thread_env	routine.cpp	/^RoutineEnv* get_curr_thread_env()$/;"	f	namespace:libfly
+get_fd_map	epoll.cpp	/^static inline clsFdMap *get_fd_map()$/;"	f	file:
+get_tick_count	hook_sys_call.cpp	/^static inline unsigned long long get_tick_count()$/;"	f	file:
+getcapacity	Time_heap.h	/^    int getcapacity() const$/;"	f	class:libfly::Time_heap
+getcur_size	Time_heap.h	/^    int getcur_size() const $/;"	f	class:libfly::Time_heap
+getenv	hook_sys_call.cpp	/^char *getenv( const char *n )$/;"	f
+getenv_pfn_t	hook_sys_call.cpp	/^typedef char *(*getenv_pfn_t)(const char *name);$/;"	t	file:
+gethostbyname	hook_sys_call.cpp	/^struct hostent *gethostbyname(const char *name)$/;"	f
+gethostbyname_pfn_t	hook_sys_call.cpp	/^typedef hostent* (*gethostbyname_pfn_t)(const char *name);$/;"	t	file:
+hPort	hook_sys_call.cpp	/^    unsigned short   hPort;$/;"	m	struct:rpchook_connagent_head_t	file:
+heap_timer	Time_heap.cpp	/^heap_timer::heap_timer( TimerCallback timerCallback,  void* arg,  int delay)$/;"	f	class:libfly::heap_timer
+heap_timer	Time_heap.h	/^class heap_timer\/\/定时器类$/;"	c	namespace:libfly
+host	hook_sys_call.cpp	/^	struct hostent host;$/;"	m	struct:hostbuf_wrap	typeref:struct:hostbuf_wrap::hostent	file:
+host_errno	hook_sys_call.cpp	/^	int host_errno;$/;"	m	struct:hostbuf_wrap	file:
+hostbuf_wrap	hook_sys_call.cpp	/^struct hostbuf_wrap $/;"	s	file:
+iBodyLen	hook_sys_call.cpp	/^    unsigned int     iBodyLen;$/;"	m	struct:rpchook_connagent_head_t	file:
+iBufferSize	hook_sys_call.cpp	/^	size_t iBufferSize;$/;"	m	struct:hostbuf_wrap	file:
+iIP	hook_sys_call.cpp	/^    struct in_addr   iIP;$/;"	m	struct:rpchook_connagent_head_t	typeref:struct:rpchook_connagent_head_t::in_addr	file:
+iOssAttrID	hook_sys_call.cpp	/^    unsigned int     iOssAttrID;$/;"	m	struct:rpchook_connagent_head_t	file:
+impl_typeof	closure.h	55;"	d
+impl_typeof_cpy	closure.h	56;"	d
+info	Log.cpp	/^void simpleLogClass::info(std::string strInfo)$/;"	f	class:simpleLogClass
+init_curr_thread_env	routine.cpp	/^void init_curr_thread_env()$/;"	f	namespace:libfly
+kEIP	coctx.cpp	/^	kEIP = 0,$/;"	e	enum:__anon1	file:
+kESP	coctx.cpp	/^	kESP = 7,$/;"	e	enum:__anon1	file:
+kRDI	coctx.cpp	/^	kRDI = 7,$/;"	e	enum:__anon2	file:
+kRETAddr	coctx.cpp	/^	kRETAddr = 9,$/;"	e	enum:__anon2	file:
+kRSI	coctx.cpp	/^	kRSI = 8,$/;"	e	enum:__anon2	file:
+kRSP	coctx.cpp	/^	kRSP = 13,$/;"	e	enum:__anon2	file:
+kevent_pair_t	epoll.cpp	/^struct kevent_pair_t$/;"	s	file:
+libfly	Callback.h	/^namespace libfly$/;"	n
+libfly	Poller.cpp	/^namespace libfly$/;"	n	file:
+libfly	Poller.h	/^namespace libfly$/;"	n
+libfly	Time_heap.cpp	/^namespace libfly$/;"	n	file:
+libfly	Time_heap.h	/^namespace libfly$/;"	n
+libfly	routine.cpp	/^namespace libfly$/;"	n	file:
+libfly	routine.h	/^namespace libfly$/;"	n
+limitFileSize	Log.cpp	/^void simpleLogClass::limitFileSize()$/;"	f	class:simpleLogClass
+ll64_t	hook_sys_call.cpp	/^typedef long long ll64_t;$/;"	t	file:
+localtime_r_pfn_t	hook_sys_call.cpp	/^typedef struct tm *(*localtime_r_pfn_t)( const time_t *timep, struct tm *result );$/;"	t	typeref:struct:localtime_r_pfn_t	file:
+loop	routine.cpp	/^void EventLoop::loop()$/;"	f	class:libfly::EventLoop
+m_pp	epoll.cpp	/^	void **m_pp[ 1024 ];$/;"	m	class:clsFdMap	file:
+main	test.cpp	/^int main()$/;"	f
+name	hook_sys_call.cpp	/^	char *name;	$/;"	m	struct:stCoSysEnv_t	file:
+occupy_	routine.h	/^    Routine* occupy_;$/;"	m	class:libfly::RoutineEnv
+occupy_co_	routine.h	/^    Routine* occupy_co_;     \/\/当前协程指针$/;"	m	class:libfly::StackMemry
+outputDebugInfo	Log.cpp	/^void simpleLogClass::outputDebugInfo(int _outputLevel, std::string strInfo)$/;"	f	class:simpleLogClass
+outputLevel	Log.h	/^        int    outputLevel;$/;"	m	class:LogClass
+param_init_typeof	closure.h	58;"	d
+pending_	routine.h	/^	Routine* pending_;$/;"	m	class:libfly::RoutineEnv
+pfn_	routine.h	/^    Routine_Function pfn_;            \/\/协程块函数$/;"	m	class:libfly::Routine
+poll	hook_sys_call.cpp	/^int poll(struct pollfd fds[], nfds_t nfds, int timeout)$/;"	f
+poll_pfn_t	hook_sys_call.cpp	/^typedef int (*poll_pfn_t)(struct pollfd fds[], nfds_t nfds, int timeout);$/;"	t	file:
+pop_timer	Time_heap.cpp	/^void Time_heap::pop_timer()$/;"	f	class:libfly::Time_heap
+pthread_getspecific_pfn_t	hook_sys_call.cpp	/^typedef void *(*pthread_getspecific_pfn_t)(pthread_key_t key);$/;"	t	file:
+pthread_setspecific_pfn_t	hook_sys_call.cpp	/^typedef int (*pthread_setspecific_pfn_t)(pthread_key_t key, const void *value);$/;"	t	file:
+ptr	epoll.h	/^	void *ptr;$/;"	m	union:epoll_data
+push_down	Time_heap.cpp	/^void Time_heap::push_down(int hole)$/;"	f	class:libfly::Time_heap
+pvEnv_	routine.h	/^    void * pvEnv_;$/;"	m	class:libfly::Routine
+read	hook_sys_call.cpp	/^ssize_t read( int fd, void *buf, size_t nbyte )$/;"	f
+read_pfn_t	hook_sys_call.cpp	/^typedef ssize_t (*read_pfn_t)(int fildes, void *buf, size_t nbyte);$/;"	t	file:
+read_timeout	hook_sys_call.cpp	/^	struct timeval read_timeout;$/;"	m	struct:rpchook_t	typeref:struct:rpchook_t::timeval	file:
+recv	hook_sys_call.cpp	/^ssize_t recv( int socket, void *buffer, size_t length, int flags )$/;"	f
+recv_pfn_t	hook_sys_call.cpp	/^typedef ssize_t (*recv_pfn_t)(int socket, void *buffer, size_t length, int flags);$/;"	t	file:
+recvfrom	hook_sys_call.cpp	/^ssize_t recvfrom(int socket, void *buffer, size_t length,$/;"	f
+recvfrom_pfn_t	hook_sys_call.cpp	/^typedef ssize_t (*recvfrom_pfn_t)(int socket, void *buffer, size_t length,$/;"	t	file:
+regs	coctx.h	/^	void *regs[ 8 ];$/;"	m	struct:coctx_t
+repeat	closure.h	47;"	d
+repeat_0	closure.h	39;"	d
+repeat_1	closure.h	40;"	d
+repeat_2	closure.h	41;"	d
+repeat_3	closure.h	42;"	d
+repeat_4	closure.h	43;"	d
+repeat_5	closure.h	44;"	d
+repeat_6	closure.h	45;"	d
+res_state_wrap	hook_sys_call.cpp	/^struct res_state_wrap$/;"	s	file:
+resize	Time_heap.cpp	/^void Time_heap::resize()$/;"	f	class:libfly::Time_heap
+resume	routine.cpp	/^void Routine::resume()$/;"	f	class:libfly::Routine
+row_size	epoll.cpp	/^	static const int row_size = 1024;$/;"	m	class:clsFdMap	file:
+rpchook_connagent_head_t	hook_sys_call.cpp	/^struct rpchook_connagent_head_t$/;"	s	file:
+rpchook_t	hook_sys_call.cpp	/^struct rpchook_t$/;"	s	file:
+runInLoop	routine.cpp	/^void EventLoop::runInLoop()$/;"	f	class:libfly::EventLoop
+runInLoopFunction_	routine.h	/^    EventLoop_Function runInLoopFunction_; $/;"	m	class:libfly::EventLoop
+runOutTimeEvent	Time_heap.cpp	/^void Time_heap::runOutTimeEvent()$/;"	f	class:libfly::Time_heap
+s1	coctx.h	/^	const void *s1;$/;"	m	struct:coctx_param_t
+s2	coctx.h	/^	const void *s2;$/;"	m	struct:coctx_param_t
+sReserved	hook_sys_call.cpp	/^	unsigned char    sReserved[6];$/;"	m	struct:rpchook_connagent_head_t	file:
+s_fd_map	epoll.cpp	/^__thread clsFdMap *s_fd_map = NULL;$/;"	v
+save_buffer_	routine.h	/^    char* save_buffer_;$/;"	m	class:libfly::Routine
+save_size_	routine.h	/^    unsigned int save_size_;$/;"	m	class:libfly::Routine
+send	hook_sys_call.cpp	/^ssize_t send(int socket, const void *buffer, size_t length, int flags)$/;"	f
+send_pfn_t	hook_sys_call.cpp	/^typedef size_t (*send_pfn_t)(int socket, const void *buffer, size_t length, int flags);$/;"	t	file:
+sendto	hook_sys_call.cpp	/^ssize_t sendto(int socket, const void *message, size_t length,$/;"	f
+sendto_pfn_t	hook_sys_call.cpp	/^typedef ssize_t (*sendto_pfn_t)(int socket, const void *message, size_t length,$/;"	t	file:
+set	epoll.cpp	/^	inline int set( int fd,const void * ptr )$/;"	f	class:clsFdMap
+setId	routine.h	/^    void setId(unsigned long long Id)$/;"	f	class:libfly::Routine
+setenv	hook_sys_call.cpp	/^int setenv(const char *n, const char *value, int overwrite)$/;"	f
+setenv_pfn_t	hook_sys_call.cpp	/^typedef int (*setenv_pfn_t)(const char *name, const char *value, int overwrite);$/;"	t	file:
+setsockopt	hook_sys_call.cpp	/^int setsockopt(int fd, int level, int option_name,$/;"	f
+setsockopt_pfn_t	hook_sys_call.cpp	/^typedef int (*setsockopt_pfn_t)(int socket, int level, int option_name,$/;"	t	file:
+simpleLog	Log.cpp	/^namespace simpleLog$/;"	n	file:
+simpleLogClass	Log.cpp	/^simpleLogClass::simpleLogClass()$/;"	f	class:simpleLogClass
+size	epoll.h	/^	int size;$/;"	m	struct:co_epoll_res
+socket	hook_sys_call.cpp	/^int socket(int domain, int type, int protocol)$/;"	f
+socket_pfn_t	hook_sys_call.cpp	/^typedef int (*socket_pfn_t)(int domain, int type, int protocol);$/;"	t	file:
+ss_size	coctx.h	/^	size_t ss_size;$/;"	m	struct:coctx_t
+ss_sp	coctx.h	/^	char *ss_sp;$/;"	m	struct:coctx_t
+stCoClosure_t	closure.h	/^struct stCoClosure_t $/;"	s
+stCoSysEnvArr_t	hook_sys_call.cpp	/^struct stCoSysEnvArr_t$/;"	s	file:
+stCoSysEnv_t	hook_sys_call.cpp	/^struct stCoSysEnv_t$/;"	s	file:
+stack_bp_	routine.h	/^	char*    stack_bp_;      \/\/stack_buffer + stack_size$/;"	m	class:libfly::StackMemry
+stack_buffer_	routine.h	/^	char*    stack_buffer_;  \/\/栈空间$/;"	m	class:libfly::StackMemry
+stack_memry_	routine.h	/^    StackMemry* stack_memry_;         \/\/协程运行栈内存$/;"	m	class:libfly::Routine
+stack_size_	routine.h	/^	int      stack_size_;    \/\/栈大小$/;"	m	class:libfly::StackMemry
+stack_size_	routine.h	/^    int stack_size_; \/\/栈大小$/;"	m	class:libfly::RoutineAttr
+stack_sp_	routine.h	/^    char* stack_sp_;$/;"	m	class:libfly::Routine
+state	hook_sys_call.cpp	/^	struct __res_state state;$/;"	m	struct:res_state_wrap	typeref:struct:res_state_wrap::__res_state	file:
+time_heap_	Poller.h	/^    Time_heap * time_heap_;$/;"	m	class:libfly::Poller
+time_heap_	routine.h	/^    Time_heap* time_heap_;$/;"	m	class:libfly::EventLoop
+time_heap_	routine.h	/^    Time_heap* time_heap_;$/;"	m	class:libfly::RoutineEnv
+timerCallback	test.cpp	/^void *timerCallback(Routine * routine)$/;"	f
+timerCallback_	Poller.h	/^    TimerCallback timerCallback_;$/;"	m	class:libfly::Poller
+timerCallback_	Time_heap.h	/^    TimerCallback timerCallback_;$/;"	m	class:libfly::heap_timer
+top	Time_heap.cpp	/^heap_timer* Time_heap::top() const $/;"	f	class:libfly::Time_heap
+trace	Log.cpp	/^void simpleLogClass::trace(std::string strTrace)$/;"	f	class:simpleLogClass
+u32	epoll.h	/^	uint32_t u32;$/;"	m	union:epoll_data
+u64	epoll.cpp	/^	uint64_t u64;$/;"	m	struct:kevent_pair_t	file:
+u64	epoll.h	/^	uint64_t u64;$/;"	m	union:epoll_data
+unsetenv	hook_sys_call.cpp	/^int unsetenv(const char *n)$/;"	f
+unsetenv_pfn_t	hook_sys_call.cpp	/^typedef int (*unsetenv_pfn_t)(const char *name);$/;"	t	file:
+user_flag	hook_sys_call.cpp	/^	int user_flag;$/;"	m	struct:rpchook_t	file:
+v	Makefile	/^v=debug$/;"	m
+value	hook_sys_call.cpp	/^	char *value;$/;"	m	struct:stCoSysEnv_t	file:
+version	Makefile	/^version=0.5$/;"	m
+write	hook_sys_call.cpp	/^ssize_t write( int fd, const void *buf, size_t nbyte )$/;"	f
+writeTime	Log.cpp	/^void simpleLogClass::writeTime(ofstream &file)$/;"	f	class:simpleLogClass
+write_pfn_t	hook_sys_call.cpp	/^typedef ssize_t (*write_pfn_t)(int fildes, const void *buf, size_t nbyte);$/;"	t	file:
+write_timeout	hook_sys_call.cpp	/^	struct timeval write_timeout;$/;"	m	struct:rpchook_t	typeref:struct:rpchook_t::timeval	file:
+x	test.cpp	/^int x= 2;$/;"	v
+yield	routine.cpp	/^void Routine::yield()$/;"	f	class:libfly::Routine
+yield_current_thread	routine.cpp	/^void yield_current_thread()$/;"	f	namespace:libfly
+yield_env	routine.cpp	/^void yield_env(RoutineEnv* env_)$/;"	f	namespace:libfly
+~EventLoop	routine.cpp	/^EventLoop::~EventLoop()$/;"	f	class:libfly::EventLoop
+~Poller	Poller.cpp	/^Poller::~Poller()$/;"	f	class:libfly::Poller
+~Routine	routine.cpp	/^Routine::~Routine()$/;"	f	class:libfly::Routine
+~Time_heap	Time_heap.cpp	/^Time_heap::~Time_heap()$/;"	f	class:libfly::Time_heap
+~clsFdMap	epoll.cpp	/^	~clsFdMap()$/;"	f	class:clsFdMap
