@@ -5,45 +5,26 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 AR	Makefile	/^AR = ar -rc$/;"	m
-AR	co.mk	/^AR = ar -rc$/;"	m
 ARSTATICLIB	Makefile	/^ARSTATICLIB = $(AR) $@.tmp $^ $(AR_FLAGS); \\$/;"	m
-ARSTATICLIB	co.mk	/^ARSTATICLIB = $(AR) $@.tmp $^ $(AR_FLAGS); \\$/;"	m
-BFLAGS	co.mk	/^BFLAGS= -g$/;"	m
 BUILDEXE	Makefile	/^BUILDEXE = $(CPP) $(BFLAGS) -o $@ $^ $(LINKS) $/;"	m
-BUILDEXE	co.mk	/^BUILDEXE = $(CPP) $(BFLAGS) -o $@ $^ $(LINKS) $/;"	m
 BUILDSHARELIB	Makefile	/^BUILDSHARELIB = $(CPPSHARE) $@.tmp $^ $(BS_FLAGS); \\$/;"	m
-BUILDSHARELIB	co.mk	/^BUILDSHARELIB = $(CPPSHARE) $@.tmp $^ $(BS_FLAGS); \\$/;"	m
 CCCOMPI	Makefile	/^CCCOMPI=$(CC) $(CFLAGS)$/;"	m
-CCCOMPI	co.mk	/^CCCOMPI=$(CC) $(CFLAGS)$/;"	m
 CCCOMPILE	Makefile	/^CCCOMPILE = $(CCCOMPI) $< $(FLAGS) $(INCLS) $(MTOOL_INCL) -o $@$/;"	m
-CCCOMPILE	co.mk	/^CCCOMPILE = $(CCCOMPI) $< $(FLAGS) $(INCLS) $(MTOOL_INCL) -o $@$/;"	m
 CFLAGS	Makefile	/^CFLAGS= -g $(INCLS) -fPIC -DLINUX -pipe -c -fno-inline$/;"	m
-CFLAGS	co.mk	/^CFLAGS= -O2 $(INCLS) -fPIC  -DLINUX -pipe -Wno-deprecated -c$/;"	m
-CFLAGS	co.mk	/^CFLAGS= -g $(INCLS) -fPIC -DLINUX -pipe -c -fno-inline$/;"	m
 CLEAN	Makefile	/^CLEAN = rm -f *.o $/;"	m
-CLEAN	co.mk	/^CLEAN = rm -f *.o $/;"	m
 COBJS	Makefile	/^COBJS  = $(patsubst %.c,%.o,$(CSRCS))$/;"	m
-COBJS	co.mk	/^COBJS  = $(patsubst %.c,%.o,$(CSRCS))$/;"	m
 COLIB_OBJS	Makefile	/^COLIB_OBJS=routine.o  coctx_swap.o coctx.o   $/;"	m
 COMM_ECHO	Makefile	/^COMM_ECHO = 1$/;"	m
 COMM_MAKE	Makefile	/^COMM_MAKE = 1$/;"	m
 CO_ROUTINE_SPECIFIC	routine_specific.h	47;"	d
 CPP	Makefile	/^CPP = $(CXX)$/;"	m
-CPP	co.mk	/^CPP = $(CXX)$/;"	m
 CPPCOMPI	Makefile	/^CPPCOMPI=$(CPP) $(CFLAGS) -Wno-deprecated$/;"	m
-CPPCOMPI	co.mk	/^CPPCOMPI=$(CPP) $(CFLAGS) -Wno-deprecated$/;"	m
 CPPCOMPILE	Makefile	/^CPPCOMPILE = $(CPPCOMPI) $< $(FLAGS) $(INCLS) $(MTOOL_INCL) -o $@$/;"	m
-CPPCOMPILE	co.mk	/^CPPCOMPILE = $(CPPCOMPI) $< $(FLAGS) $(INCLS) $(MTOOL_INCL) -o $@$/;"	m
 CPPOBJS	Makefile	/^CPPOBJS  = $(patsubst %.cpp,%.o,$(CPPSRCS))$/;"	m
-CPPOBJS	co.mk	/^CPPOBJS  = $(patsubst %.cpp,%.o,$(CPPSRCS))$/;"	m
 CPPSHARE	Makefile	/^CPPSHARE = $(CPP) -fPIC -shared -O2 -pipe -L$(SRCROOT)\/solib\/ -o $/;"	m
-CPPSHARE	co.mk	/^CPPSHARE = $(CPP) -fPIC -shared -O2 -pipe -L$(SRCROOT)\/solib\/ -o $/;"	m
 CPPSRCS	Makefile	/^CPPSRCS  = $(wildcard *.cpp)$/;"	m
-CPPSRCS	co.mk	/^CPPSRCS  = $(wildcard *.cpp)$/;"	m
 CSHARE	Makefile	/^CSHARE = $(CC) -fPIC -shared -O2 -pipe -L$(SRCROOT)\/solib\/ -o $/;"	m
-CSHARE	co.mk	/^CSHARE = $(CC) -fPIC -shared -O2 -pipe -L$(SRCROOT)\/solib\/ -o $/;"	m
 CSRCS	Makefile	/^CSRCS  = $(wildcard *.c)$/;"	m
-CSRCS	co.mk	/^CSRCS  = $(wildcard *.c)$/;"	m
 CallStackSize_	routine.h	/^	int CallStackSize_;               \/\/栈指针$/;"	m	class:libfly::RoutineEnv
 CallStack_	routine.h	/^	Routine* CallStack_[ 128 ];       \/\/保存调用链$/;"	m	class:libfly::RoutineEnv
 Cond_Callback	Conditional_variable.cpp	/^static void *Cond_Callback(Routine *routine)$/;"	f	namespace:libfly
@@ -52,7 +33,6 @@ Conditional_variable	Conditional_variable.h	/^class Conditional_variable$/;"	c	n
 Consumer	test.cpp	/^void * Consumer(void *arg)$/;"	f
 DEBUG	Log.cpp	/^		const int DEBUG = 0; $/;"	m	namespace:libfly::LogInfo::LevelType	file:
 DYNAMICLIBPATH	Makefile	/^DYNAMICLIBPATH=$(SRCROOT)\/solib$/;"	m
-DYNAMICLIBPATH	co.mk	/^DYNAMICLIBPATH=$(SRCROOT)\/solib$/;"	m
 EAX	coctx.cpp	25;"	d	file:
 ECX	coctx.cpp	26;"	d	file:
 EIP	coctx.cpp	24;"	d	file:
@@ -91,9 +71,7 @@ Log	Log.h	/^class Log$/;"	c	namespace:libfly
 LogInfo	Log.cpp	/^namespace LogInfo$/;"	n	namespace:libfly	file:
 LogInfo	Log.h	/^namespace LogInfo$/;"	n	namespace:libfly
 MAIL_ROOT	Makefile	/^MAIL_ROOT=.$/;"	m
-MAIL_ROOT	co.mk	/^MAIL_ROOT=.$/;"	m
 OBJS	Makefile	/^OBJS = $(CPPOBJS) $(COBJS)$/;"	m
-OBJS	co.mk	/^OBJS = $(CPPOBJS) $(COBJS)$/;"	m
 PROGS	Makefile	/^PROGS = colib  test $/;"	m
 Poller	Poller.cpp	/^Poller::Poller( TimerCallback  timerCallback , void * arg , int delay)$/;"	f	class:libfly::Poller
 Poller	Poller.h	/^class Poller$/;"	c	namespace:libfly
@@ -105,7 +83,6 @@ R15	coctx.cpp	38;"	d	file:
 R8	coctx.cpp	41;"	d	file:
 R9	coctx.cpp	42;"	d	file:
 RANLIB	Makefile	/^RANLIB = ranlib$/;"	m
-RANLIB	co.mk	/^RANLIB = ranlib$/;"	m
 RBP	coctx.cpp	34;"	d	file:
 RBX	coctx.cpp	30;"	d	file:
 RCX	coctx.cpp	40;"	d	file:
@@ -123,11 +100,8 @@ RoutineFunc	routine.cpp	/^static int RoutineFunc( Routine* routine,void * )$/;"	
 Routine_Function	Callback.h	/^typedef void *(*Routine_Function)( void * );$/;"	t	namespace:libfly
 Routine_Id	routine.cpp	/^unsigned long long Routine_Id=0;$/;"	m	namespace:libfly	file:
 SRCROOT	Makefile	/^SRCROOT=.$/;"	m
-SRCROOT	co.mk	/^SRCROOT=.$/;"	m
 SRCS	Makefile	/^SRCS = $(CPPSRCS) $(CSRCS)$/;"	m
-SRCS	co.mk	/^SRCS = $(CPPSRCS) $(CSRCS)$/;"	m
 STATICLIBPATH	Makefile	/^STATICLIBPATH=$(SRCROOT)\/lib$/;"	m
-STATICLIBPATH	co.mk	/^STATICLIBPATH=$(SRCROOT)\/lib$/;"	m
 StackMemry	routine.cpp	/^StackMemry::StackMemry(int stack_size)$/;"	f	class:libfly::StackMemry
 StackMemry	routine.h	/^class StackMemry$/;"	c	namespace:libfly
 Start_	routine.h	/^    char Start_;                      \/\/协程是否运行$/;"	m	class:libfly::Routine
