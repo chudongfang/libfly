@@ -42,7 +42,6 @@
 
 #include <time.h>
 #include "routine.h"
-//#include "routine_inner.h"
 #include "routine_specific.h"
 
 typedef long long ll64_t;

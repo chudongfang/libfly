@@ -27,7 +27,7 @@ Log::Log(std::string projectName)
 {
 	fileName_ =  projectName_ +  ".log";
 	fileOldName_ =  projectName_ + ".old.log";
-	fileMaxSize_ = 64 * 1024;     //default is 64KB size.
+	fileMaxSize_ = 128 * 1024;               //默认大小128kb
     outputLevel_ = LogInfo::LevelType::TRACE;
 }
 
@@ -64,6 +64,8 @@ void Log::limitFileSize()
 	}
 }
 
+
+//写时间
 void Log::writeTime(std::ofstream &file)
 {
 	time_t t;
@@ -127,6 +129,7 @@ void Log::error(std::string file , std::string function, int line , std::string 
         outputInfo(LogInfo::LevelType::ERROR, file, function, line, strError);
 	}
 }
+
 void Log::debug(std::string file , std::string function, int line , std::string strDebug)
 {
     std::cout <<"DEBUG-->"<< file <<" " << function <<" "<<line <<" :" <<strDebug<<std::endl;
