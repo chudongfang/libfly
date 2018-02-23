@@ -13,9 +13,9 @@
 #include<string>
 #include<functional>
 #include<Callback.h>
-#include"routine.h"
 #include"coctx.h"
 #include"Time_heap.h"
+#include"Epoll.h"
 
 namespace libfly
 {
@@ -36,6 +36,9 @@ public:
     void resume();
     void yield();
     void release();
+
+
+
 public:
     
     RoutineEnv * env_;                //当前协程环境
@@ -77,7 +80,6 @@ public:
 	int      stack_size_;    //栈大小
 	char*    stack_bp_;      //stack_buffer + stack_size
 	char*    stack_buffer_;  //栈空间
-
 };
 
 
@@ -94,8 +96,17 @@ public:
 };
 
 
+
+
+
+
+
 class RoutineEnv
 {
+public:
+    
+    RoutineEnv();
+    ~RoutineEnv();
 public:
 	Routine* CallStack_[ 128 ];       //保存调用链
 	int CallStackSize_;               //栈指针
@@ -103,6 +114,7 @@ public:
 	Routine* pending_;
     Routine* occupy_;
     
+    Epoll * epoll_;
     //时间堆定时器
     Time_heap* time_heap_;
 };

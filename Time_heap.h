@@ -17,7 +17,7 @@ class heap_timer//定时器类
 {
 public:
     heap_timer( TimerCallback timerCallback,  void* arg,  int delay);
-    
+    heap_timer() {} 
 
 public:
     //定时器生效时间

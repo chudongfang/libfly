@@ -2,7 +2,7 @@
 
 
 #ls_date=`date +%Y-%m-%d`
-ls_date='update'
+ls_date='libfly'
 ctags -R .
 git pull 
 git add .

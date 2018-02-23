@@ -19,5 +19,7 @@ typedef void *(*TimerCallback)( Routine * );
 //EventLoop中执行的函数
 typedef int (*EventLoop_Function)(void *);
 
+typedef void *(* EpollCallback)(void *);
+
 }
 

@@ -2,5 +2,5 @@
 ctags -R .
 make clean
 make
-./test
+./test_server
 #make clean

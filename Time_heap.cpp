@@ -116,7 +116,7 @@ void Time_heap::del_timer(heap_timer* timer)
     {
         return;
     }
-
+    //置执行的函数为空
     timer->timerCallback_ = NULL;
 }
 

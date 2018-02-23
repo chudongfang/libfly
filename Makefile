@@ -6,8 +6,6 @@ version=0.5
 
 
 
-
-
 ##### Makefile Rules ##########
 MAIL_ROOT=.
 SRCROOT=.
@@ -87,24 +85,28 @@ CFLAGS += -std=c++11 -g -fno-strict-aliasing -O2 -Wall -export-dynamic \
 LINKS += -std=c++11 -g -L./lib -lcolib -lpthread -ldl
 
 #生成静态库和动态库时需要的文件
-COLIB_OBJS=routine.o  coctx_swap.o coctx.o   
+COLIB_OBJS=routine.o  coctx_swap.o coctx.o Log.o   
 
 #要编译的文件
-PROGS = colib  test 
+PROGS = colib  test_server 
 
 #make 时默认编译 PROGS
 all:$(PROGS)
 
+
+#############################
 colib:libcolib.a libcolib.so
 
 libcolib.a: $(COLIB_OBJS)
 	$(ARSTATICLIB) 
 libcolib.so: $(COLIB_OBJS)
 	$(BUILDSHARELIB) 
+#############################
 
-test:test.o
+test_server:test_server.o
 	$(BUILDEXE)
 
+#发布打包
 dist: clean libco-$(version).src.tar.gz
 
 clean:
