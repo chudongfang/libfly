@@ -1,4 +1,3 @@
-//test for Conditional_variable
 
 
 #include <unistd.h>
@@ -24,7 +23,6 @@ using namespace libfly;
 
 Conditional_variable cond;
 int product;
-
 
 void *timerCallback(Routine * routine)
 {

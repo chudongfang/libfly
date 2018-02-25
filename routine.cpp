@@ -251,7 +251,6 @@ void yield_env(RoutineEnv* env_)
 //协程中要执行的函数
 //该函数会调用回调函数
 //并退出当前协程
-//static存放在全局数据区也就是.data段
 static int RoutineFunc( Routine* routine,void * )
 {
     //执行协程函数
