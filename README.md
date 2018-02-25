@@ -4,26 +4,7 @@
   
 #### 一个简单的生产者-消费者的协程实现
 ```
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <queue>
-#include <iostream>
-#include "routine.h"
-#include "routine.cpp"
-#include <vector>
-#include "Time_heap.h"
-#include "Time_heap.cpp"
-#include "Poller.h"
-#include "Poller.cpp"
-#include "Conditional_variable.cpp"
-#include "Conditional_variable.h"
-#include "Log.h"
-#include "Log.cpp"
-
 using namespace libfly;
-
-
 
 Conditional_variable cond;
 int product;
@@ -44,7 +25,6 @@ void * Producer(void *arg)
         cond.notify_one();
         //返回主协程
         Poller(timerCallback , get_curr_routine(),1); 
-        
     }
 }
 
@@ -75,10 +55,4 @@ int main()
     eventloop.loop();
     return 0;
 }
-
-
-
-
-
-
 ```
