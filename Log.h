@@ -25,11 +25,11 @@
 namespace libfly
 {
 
-#define LOG(projectName) Log Logname(projectName)
-#define LOG_TRACE(strTrace) (Logname).trace(__FILE__,__FUNCTION__,__LINE__,(strTrace))
-#define LOG_INFO(strTrace)  (Logname).info(__FILE__,__FUNCTION__,__LINE__,(strTrace)
-#define LOG_ERROR(strTrace) (Logname).error(__FILE__,__FUNCTION__,__LINE__,(strTrace)
-#define LOG_DEBUG(strTrace) (Logname).debug(__FILE__,__FUNCTION__,__LINE__,(strTrace))
+#define LOG_TRACE(Logname,strTrace) (Logname).trace(__FILE__,__FUNCTION__,__LINE__,(strTrace))
+#define LOG_INFO(Logname,strTrace)  (Logname).info(__FILE__,__FUNCTION__,__LINE__,(strTrace)
+#define LOG_ERROR(Logname,strTrace) (Logname).error(__FILE__,__FUNCTION__,__LINE__,(strTrace)
+#define LOG_DEBUG(Logname,strTrace) (Logname).debug(__FILE__,__FUNCTION__,__LINE__,(strTrace))
+
 namespace LogInfo
 {
     namespace LevelType{//less is more important.
@@ -39,7 +39,6 @@ namespace LogInfo
          extern const int DEBUG; //no output
     }
 }
-
 
 class Log
 {

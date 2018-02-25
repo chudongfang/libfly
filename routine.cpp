@@ -25,10 +25,8 @@
 
 #include"Callback.h"
 #include"routine.h"
+//#include"routine_inner.h"
 #include<functional>
-
-
-
 namespace libfly
 {
 extern "C"
@@ -92,11 +90,8 @@ unsigned long long Routine_Id=0;
 
 //-------------RoutineEnv--------------------------
 
-
-
 //初始化当前线程的协程环境
 //并初始化主协程
-//FIXME use RoutineEnv()
 void init_curr_thread_env()
 {
 	pid_t pid = GetPid();	
@@ -117,7 +112,8 @@ void init_curr_thread_env()
     
     //初始化定时器
     env->time_heap_ = new Time_heap(50);
-
+	//stCoEpoll_t *ev = AllocEpoll();
+	//SetEpoll( env,ev );
 }
 
 
@@ -149,21 +145,6 @@ StackMemry::StackMemry(int stack_size)
     stack_buffer_ = (char *) malloc(stack_size_); 
     stack_bp_ = stack_buffer_ + stack_size_;    //栈顶
 }
-
-//------RoutineEnv begin---------
-
-RoutineEnv::RoutineEnv()
-{
-    epoll_ = new Epoll();
-}
-
-RoutineEnv::~RoutineEnv()
-{
-    free(epoll_);
-}
-
-//------RoutineEnv end-----------
-
 
 
 
@@ -366,24 +347,8 @@ void EventLoop::runInLoop()
 
 void EventLoop::loop()
 {
-    //得到本协程epollFd
-    int epollFd = get_curr_thread_env()->epoll_->epollFd_;
-    
-    //存储epoll_wait结果
-    epoll_res * result = get_curr_thread_env()->epoll_->result_; 
-
     while(1)
     {
-        int ret = epoll_wait(epollFd ,result->events_,Epoll::epollSize_ , 1);
-        //std::cout<<"ret :"<<ret<<std::endl;
-        for(int i = 0; i < ret; i++)
-        {
-            std::cout<<"Yes! I'get something"<<std::endl;
-            Timer_Epoll * timer = (Timer_Epoll*)result->events_[i].data.ptr;
-            timer->epollCallback_(timer);
-        }
-        
-        
         time_heap_->runOutTimeEvent(); 
         runInLoop();
     }
