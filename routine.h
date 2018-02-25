@@ -20,6 +20,7 @@
 namespace libfly
 {
 
+//向前声明
 class RoutineEnv;
 class Spec;
 class StackMemry;
@@ -33,9 +34,8 @@ public:
     //FIXME RoutineAttr use the *
     Routine(RoutineEnv * env,const RoutineAttr* attr ,void*(*pfn)(void*),void *arg );
     ~Routine();
-    void resume();
-    void yield();
-    void release();
+    void resume();   //运行当前协程
+    void yield();    //退出当前协程
 public:
     
     RoutineEnv * env_;                //当前协程环境
@@ -44,21 +44,19 @@ public:
     coctx_t ctx_;                     //用来保存CPU上下文
 
     char Start_;                      //协程是否运行
-    char End_;
+    char End_;                        //协程是否结束
     char IsMainRoutine_;              //是否是主协程
 
-    void * pvEnv_;
-    
     StackMemry* stack_memry_;         //协程运行栈内存
     
-    char* stack_sp_;
-    unsigned int save_size_;
-    char* save_buffer_;
+    char* stack_sp_;                  //顶指针
+    unsigned int save_size_;          //buff大小
+    char* save_buffer_;               //buff
 
-    unsigned long long getId() const
+    unsigned long long getId() const  //获取协程ID
     {  return Id_; }
 
-    void setId(unsigned long long Id)
+    void setId(unsigned long long Id) //设置协程ID
     { Id_ = Id; }
 
 private:

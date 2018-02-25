@@ -28,7 +28,6 @@ int product;
 
 void *timerCallback(Routine * routine)
 {
-    //std::cout<<"I'm timerCallback Function. I will resume this routine!\n"<<std::endl;
     routine->resume();
 }
 
@@ -41,7 +40,6 @@ void * Producer(void *arg)
         product ++;
         std::cout<<"Producer  product::"<<product<<std::endl;
         cond.notify_one();
-        
         //返回主协程
         Poller(timerCallback , get_curr_routine(),1); 
         
@@ -60,12 +58,9 @@ void * Consumer(void *arg)
     }
 }
 
-Log mylog("libfly");
 int main()
 {
     
-    LOG_TRACE(mylog,"Yes!");
-    LOG_DEBUG(mylog,"debug");
     std::vector<Routine*> RoutineArr; 
     RoutineArr.push_back(new Routine(get_curr_thread_env(),NULL,Consumer,NULL) );	
     RoutineArr.push_back(new Routine(get_curr_thread_env(),NULL,Producer,NULL) );	

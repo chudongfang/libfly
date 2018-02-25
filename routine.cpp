@@ -59,16 +59,6 @@ Routine * get_curr_routine();
 
 //---------------------toolsfunction------------------------------
 //获取时间
-static unsigned long long GetTickMS()
-{
-    struct timeval now = {0};
-    gettimeofday(&now,NULL);
-    unsigned long long u = now.tv_sec;
-    u *= 1000;
-    u += now.tv_usec / 1000;
-    return u;
-}
-
 
 //得到当前ID
 static pid_t GetPid()
@@ -183,7 +173,7 @@ Routine::Routine( RoutineEnv * env,
 		at.stack_size_ += 0x1000;
 	}
 	
-
+    //分配栈内存
     StackMemry* stack_memry = new StackMemry(at.stack_size_);
 
 	stack_memry_ = stack_memry;
@@ -193,6 +183,8 @@ Routine::Routine( RoutineEnv * env,
 
 	save_size_ = 0;
 	save_buffer_ = NULL;
+
+    //----debug-----
     std::cout<<"成功创建了一个协程!"<<std::endl;
 }
 

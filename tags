@@ -35,12 +35,11 @@ ECX	coctx.cpp	26;"	d	file:
 EIP	coctx.cpp	24;"	d	file:
 ERROR	Log.cpp	/^		const int ERROR = 30;$/;"	m	namespace:libfly::LogInfo::LevelType	file:
 ESP	coctx.cpp	23;"	d	file:
-End_	routine.h	/^    char End_;$/;"	m	class:libfly::Routine
+End_	routine.h	/^    char End_;                        \/\/协程是否结束$/;"	m	class:libfly::Routine
 EventLoop	routine.cpp	/^EventLoop::EventLoop( Time_heap* time_heap, EventLoop_Function runInLoopFunction , void *arg )$/;"	f	class:libfly::EventLoop
 EventLoop	routine.h	/^class EventLoop$/;"	c	namespace:libfly
 EventLoop_Function	Callback.h	/^typedef int (*EventLoop_Function)(void *);$/;"	t	namespace:libfly
 GetPid	routine.cpp	/^static pid_t GetPid()$/;"	f	namespace:libfly
-GetTickMS	routine.cpp	/^static unsigned long long GetTickMS()$/;"	f	namespace:libfly
 INFO	Log.cpp	/^		const int INFO = 50;$/;"	m	namespace:libfly::LogInfo::LevelType	file:
 Id_	routine.h	/^    unsigned long long Id_;           \/\/协程ID$/;"	m	class:libfly::Routine
 IsMainRoutine_	routine.h	/^    char IsMainRoutine_;              \/\/是否是主协程$/;"	m	class:libfly::Routine
@@ -143,7 +142,7 @@ fileName_	Log.h	/^    std::string fileName_;$/;"	m	class:libfly::Log
 fileOldName_	Log.h	/^    std::string fileOldName_;$/;"	m	class:libfly::Log
 g_arryEnvPerThread	routine.cpp	/^static RoutineEnv* g_arryEnvPerThread[ 204800 ] = {0};$/;"	m	namespace:libfly	file:
 getFileSize	Log.cpp	/^long Log::getFileSize() {$/;"	f	class:libfly::Log
-getId	routine.h	/^    unsigned long long getId() const$/;"	f	class:libfly::Routine
+getId	routine.h	/^    unsigned long long getId() const  \/\/获取协程ID$/;"	f	class:libfly::Routine
 get_curr_routine	routine.cpp	/^Routine * get_curr_routine()$/;"	f	namespace:libfly
 get_curr_thread_env	routine.cpp	/^RoutineEnv* get_curr_thread_env()$/;"	f	namespace:libfly
 getcapacity	Time_heap.h	/^    int getcapacity() const$/;"	f	class:libfly::Time_heap
@@ -191,7 +190,6 @@ pop_timer	Time_heap.cpp	/^void Time_heap::pop_timer()$/;"	f	class:libfly::Time_h
 product	test.cpp	/^int product;$/;"	v
 projectName_	Log.h	/^    std::string projectName_;$/;"	m	class:libfly::Log
 push_down	Time_heap.cpp	/^void Time_heap::push_down(int hole)$/;"	f	class:libfly::Time_heap
-pvEnv_	routine.h	/^    void * pvEnv_;$/;"	m	class:libfly::Routine
 regs	coctx.h	/^	void *regs[ 8 ];$/;"	m	struct:coctx_t
 repeat	closure.h	47;"	d
 repeat_0	closure.h	39;"	d
@@ -209,9 +207,9 @@ runInLoopFunction_	routine.h	/^    EventLoop_Function runInLoopFunction_; $/;"	m
 runOutTimeEvent	Time_heap.cpp	/^void Time_heap::runOutTimeEvent()$/;"	f	class:libfly::Time_heap
 s1	coctx.h	/^	const void *s1;$/;"	m	struct:coctx_param_t
 s2	coctx.h	/^	const void *s2;$/;"	m	struct:coctx_param_t
-save_buffer_	routine.h	/^    char* save_buffer_;$/;"	m	class:libfly::Routine
-save_size_	routine.h	/^    unsigned int save_size_;$/;"	m	class:libfly::Routine
-setId	routine.h	/^    void setId(unsigned long long Id)$/;"	f	class:libfly::Routine
+save_buffer_	routine.h	/^    char* save_buffer_;               \/\/buff$/;"	m	class:libfly::Routine
+save_size_	routine.h	/^    unsigned int save_size_;          \/\/buff大小$/;"	m	class:libfly::Routine
+setId	routine.h	/^    void setId(unsigned long long Id) \/\/设置协程ID$/;"	f	class:libfly::Routine
 setfileName	Log.h	/^    void setfileName(const std::string fileName)$/;"	f	class:libfly::Log
 setprojectName	Log.h	/^    void setprojectName(const std::string projectName)$/;"	f	class:libfly::Log
 size_	Conditional_variable.h	/^    int size_;     $/;"	m	class:libfly::Conditional_variable
@@ -223,7 +221,7 @@ stack_buffer_	routine.h	/^	char*    stack_buffer_;  \/\/栈空间$/;"	m	class:li
 stack_memry_	routine.h	/^    StackMemry* stack_memry_;         \/\/协程运行栈内存$/;"	m	class:libfly::Routine
 stack_size_	routine.h	/^	int      stack_size_;    \/\/栈大小$/;"	m	class:libfly::StackMemry
 stack_size_	routine.h	/^    int stack_size_; \/\/栈大小$/;"	m	class:libfly::RoutineAttr
-stack_sp_	routine.h	/^    char* stack_sp_;$/;"	m	class:libfly::Routine
+stack_sp_	routine.h	/^    char* stack_sp_;                  \/\/顶指针$/;"	m	class:libfly::Routine
 time_heap_	Poller.h	/^    Time_heap * time_heap_;$/;"	m	class:libfly::Poller
 time_heap_	routine.h	/^    Time_heap* time_heap_;$/;"	m	class:libfly::EventLoop
 time_heap_	routine.h	/^    Time_heap* time_heap_;$/;"	m	class:libfly::RoutineEnv
