@@ -2,7 +2,7 @@
 
 
 #ls_date=`date +%Y-%m-%d`
-ls_date='reactor_socket'
+ls_date='update'
 ctags -R .
 git pull 
 git add .
