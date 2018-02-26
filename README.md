@@ -47,7 +47,7 @@ routine->yiled();
 ---
 
 #### 一个简单的生产者-消费者的协程实现
-```
+```c++
 using namespace libfly;
 
 Conditional_variable cond;
