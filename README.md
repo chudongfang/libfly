@@ -6,7 +6,7 @@
 
 #### libfly基本的架构图
 
-![libfly1](https://github.com/chudongfang/java_practice/blob/master/picture/libfly1.png)
+![libfly1](https://github.com/chudongfang/java_practice/blob/master/picture/libfly.png)
 
 ## How to use
 
