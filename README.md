@@ -8,7 +8,43 @@
 
 ![libfly1](https://github.com/chudongfang/java_practice/blob/master/picture/libfly.png)
 
+
+---
+
 ## How to use
+
+
+
+#### 协程的创建
+```c++
+void* Func(void *arg)
+{
+    int* x = (int*)arg;
+    std::cout<<*x<<std::endl;
+}
+int x = 1;
+Routine  * routine = new Routine(get_curr_thread_env(),NULL,Func,&x);
+
+```
+
+---
+
+
+#### 协程的唤醒和退出
+
+```c++
+void* Func(void *arg)
+{
+    int* x = (int*)arg;
+    std::cout<<*x<<std::endl;
+}
+int x = 1;
+Routine  * routine = new Routine(get_curr_thread_env(),NULL,Func,&x);
+routine->resume();
+routine->yiled();
+```
+
+---
 
 #### 一个简单的生产者-消费者的协程实现
 ```
