@@ -4,9 +4,9 @@
     编写此协程库的目的是为了让协程理解起来更容易，让协程编程更加简单!
     正逐步完善代码注释与文档，欢迎大家一起讨论交流～
 
-#### 一个最基本的
+#### libfly基本的架构图
 
-
+![libfly1](https://github.com/chudongfang/java_practice/blob/master/picture/libfly1.png)
 
 ## How to use
 
